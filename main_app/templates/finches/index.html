@@ -4,16 +4,16 @@
     <h1>All Finches Page</h1>
 
 {% for finch in finches %}
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ finch.species }}</span>
-            <p>Beaklength: {{ finch.beaklength }}</p>
-            <p>BodyWeight: {{ finch.bodyWeight }}</p>
-            <p>Color: {{ finch.color }}</p>
-            <p>Habitat: {{ finch.habitat }}</p>
+    <a href="{% url 'detail' finch.id %}">
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">{{ finch.species }}</span>
+                <p>Beaklength: {{ finch.beaklength }}</p>
+                <p>Color: {{ finch.color }}</p>
+            </div>
         </div>
-    </div>
-    <hr>
+        <hr>
+    </a>
 {% endfor %}
 
 {% endblock %}
