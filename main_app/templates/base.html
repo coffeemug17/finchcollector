@@ -9,13 +9,16 @@
 <body>
     <nav>
         <div>
-            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
         </div>
         <div>
-            <li><a href="/about">About</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
         </div>
         <div>
-            <li><a href="/finches">View All My Finches</a></li>
+            <li><a href="{% url 'finches_create' %}">Create Finch</a></li>
+        </div>
+        <div>
+            <li><a href="{% url 'index' %}">View All My Finches</a></li>
         </div>
     </nav>
 
