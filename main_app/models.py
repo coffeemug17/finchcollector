@@ -23,6 +23,10 @@ class Finch(models.Model):
     beakLength = models.IntegerField()
     color = models.CharField(max_length=100)
 
+    # Create a M:M relationship
+    # toys is the Related Manager
+    toys = models.ManyToManyField(Toy)
+
     def __str__(self):
         return f'{self.species} ({self.id})'
 
