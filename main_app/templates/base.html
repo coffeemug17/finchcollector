@@ -1,24 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <nav>
         <div>
-            <li><a href="{% url 'home' %}">Home</a></li>
+            <a href="{% url 'home' %}">Home</a>
         </div>
         <div>
-            <li><a href="{% url 'about' %}">About</a></li>
+            <a href="{% url 'toys_create' %}">Add a Toy</a>
         </div>
         <div>
-            <li><a href="{% url 'finches_create' %}">Create Finch</a></li>
+            <a href="{% url 'toys_index' %}">View All Toys</a>
         </div>
         <div>
-            <li><a href="{% url 'index' %}">View All My Finches</a></li>
+            <a href="{% url 'about' %}">About</a>
+        </div>
+        <div>
+            <a href="{% url 'finches_create' %}">Create Finch</a>
+        </div>
+        <div>
+            <a href="{% url 'index' %}">View All My Finches</a>
         </div>
     </nav>
 
