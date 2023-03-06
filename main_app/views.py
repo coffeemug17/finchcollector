@@ -34,7 +34,7 @@ def finches_detail(request, finch_id):
 
 class FinchCreate(CreateView):
     model = Finch
-    fields = '__all__'
+    fields = ['species', 'beakLength', 'color']
     success_url = '/finches'
 
 class FinchUpdate(UpdateView):
@@ -72,3 +72,7 @@ class ToyUpdate(UpdateView):
 class ToyDelete(DeleteView):
   model = Toy
   success_url = '/toys'
+
+def assoc_toy(request, finch_id, toy_id):
+   Finch.objects.get(id=finch_id).toys.add(toy_id)
+   return redirect('detail', finch_id=finch_id)
